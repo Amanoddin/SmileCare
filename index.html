@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SmileCare - We care for your smile</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    
+    <body id="home">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#home">SmileCare</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">SmileCare</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">We care for your smile. For your pain we have the solution.</h2>
+                        <!-- Appointment button -->
+                        <button id="appo" type="button" class="btn btn-primary" >
+                            Book an appointment
+                        </button>
+                        <!-- Appointment Modal -->
+<div id="myappo" class="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><strong>SmileCare - Appointments</strong></h5>
+         <button type="button" id="exitbutton" class="close-white">
+        <span aria-hidden="true">&times;</spans>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+            <form action="../php/action_page.php" method="post">
+                <br>
+                <div class="personal">
+                <h5><b>Personal Details</b></h5></div>
+                
+            <div class="details">
+                
+                <label for="fname">First name</label>
+                <input type="text" name="Firstname" id="fname" placeholder="Your name" style="width: 7rem;" required>
+                
+                <label for="fname">Last name</label>
+                <input type="text" name="Lastname" id="fname" placeholder="Surname" style="width: 7rem;" required><br>
+                
+                <label for="Age" style="padding-top: 3%; padding-bottom: 3%;">Age</label>
+                <input type="number" name="age" id="Age" name="Age" min="7" max="100" step="1" value="33" style="width: 3.5rem; margin-right: 10%;" required>    
+  
+                <input type="radio" id="Male" name="fav_language" value="Male">
+                <label for="Male">Male</label>
+                <input type="radio" id="Female" name="fav_language" value="Female">
+                <label for="Female">Female</label>
+                <br>
+                
+            </div>
+            
+                <div class="personal">
+                <h5><b>Appointment Details</b></h5>
+                </div>
+                
+            <div class="details">
+                <label for="datemax">Date</label>
+                <input type="date" id="datemax" name="datemax" min="2022-02-16" max="2022-12-31" style="width: 40%;" required><br>
+  
+                <label for="SLOTS" style="padding-top: 3%;">Slot</label>
+                <select id="SLOTS" name="SLOTS" required>
+                <option value="SLOT1">9:00AM - 11:00AM</option>
+                <option value="SLOT2">3:00PM - 05:00PM</option>
+                <option value="SLOT3">7:00PM - 09:00PM</option>
+                </select>
+            </div>
+  
+                <label for="phone" style="padding-top: 3%; padding-bottom: 3%; ">Ph. no.</label>
+                <input type="tel" placeholder="1234567890" id="phone" name="phone" pattern="[0-9]{10}" style="width: 26%;" required>
+  
+                <label for="email" name="email">Email</label>
+                <input type="email" placeholder="example@smilecare.com" id="email" name="email" style="width: 45%;" required>
+               
+        </div>
+        
+        <div class="modal-footer justify-content-center text-center">
+          <button input type="reset" type="button" class="btn btn-primary" style="width: 7rem; padding: 5% 0 5%; margin-right: 30%;">reset</button>
+          <button type="submit" class="btn btn-secondary" value="Submit" style="width: 7rem; text-align: center; padding: 5% 0 5%;">confirm</button>
+          
+        </form>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+<!-- SmileBot button -->
+<button id="myBtn" type="button" class="btn btn-primary">SmileBot</button>
+
+<!-- SmileBot Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><strong>SmileBot</strong></h5>
+        <button type="button" class="close-sm">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe src='https://webchat.botframework.com/embed/smilecarefaq-bot?s=7HGPswjpc8I.fNo8dUal3hnvkG656SOtqdS0CQuq8KVr_4K4iuTYTBo'  style='min-width: 400px; width: 100%; min-height: 350px; '></iframe>
+      </div>
+      <div class="modal-footer">
+        <div class="container px-4 px-lg-5"><strong>Copyright &copy; SmileCare</strong></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+            
+</header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5 justify-content-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="text-white mb-4">TEAM OF EXPERTS</h1>
+                        <p class="text-white-50">
+                            We are professionals skilled in; dentistry, smile enhancement, 
+                            VENEERS, more. 
+                            We rejuvenated perfect smile for thousands by SMILE MAKEOVERS.
+                        <br><br>
+                        </p>
+                    </div>
+                    <experts>
+                       <div class="row justify-content-center">
+                          <div class="col-sm-4">
+                            <div class="card" style="width: 13rem; height: 25rem;">
+                            <div class="thumbnail">
+                              <img class="card-img-top" src="assets/img/American_Dr.jpg" alt="Paris" width="200" height="200">
+                              <p style="color: black;"><strong><br>Dr. Stephen Brown<br>Co-Founder</strong></p>
+                              <p style="color: black;">Periodontist
+                                  <br>
+                                  BDS │ MDS │ MSD
+                                  <br>
+                                  Experience for 12 Years.
+                              </p>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="card" style="width: 13rem; height: 25rem;">
+                            <div class="thumbnail">
+                              <img class="card-img-top" src="assets/img/Indian_Dr.jpg" alt="New York" class="img-rounded" width="200" height="200">
+                              <p style="color: black;"><strong><br>Dr. Karan Mukherjee<br>Founder</strong></p>
+                              <p style="color: black;">Oral and Maxillofacial Surgeon
+                                  <br>
+                                  BDS │ MJDF │ MFDS
+                                  <br>
+                                Experience for 32 Years.
+                              </p>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="card" style="width: 13rem; height: 25rem;">
+                            <div class="thumbnail">
+                              <img class="card-img-top" src="assets/img/Chinese_Dr.jpg" alt="San Francisco" width="200" height="200">
+                              <p style="color: black;"><strong><br>Dr. Chaoxiang Liu<br>Co-Founder</strong></p>
+                              <p style="color: black;">Endodontists
+                                  <br>
+                                  BDS │ MDS │ FDSRCS
+                                  <br>
+                                Experience for 31 Years.
+                              </p>
+                            </div>
+                          </div>
+                        </div>  
+                    </div>
+                </experts>
+            </div>
+            </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/Services.jpg" alt="..." height="500" width="550"/></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Services</h4>
+                            <p class="text-black-50 mb-0">The international Award-Winning 
+                                team here at Sevil Smile Studio are
+                                 professionals skilled in; dentistry, smile enhancement, 
+                                VENEERS, IMPLANTS, and general dental aesthetics. 
+                                We have created SMILE MAKEOVERS for thousands of 
+                                happy clients giving them a rejuvenated perfect smile.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/Oral_and_maxillofacial.jpg" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Oral and Maxillofacial Surgery</h4>
+                                    <p class="mb-0 text-white-50">Our surgeons skilled in the field and performed surgeries for decades, would handle you with utmost care.</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/orthodontic.jpg" alt="..." /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Endodontic, Orthodontic and Prosthodontic Services</h4>
+                                    <p class="mb-0 text-white-50">May it be alignment of teeth, replacement and restoration procedures or gum diseases; our splecialists are there to help you.</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black justify-content-center" id="Contact">
+            <h1 class="text-white mb-4 text-center">CONTACT US</h1>
+            <div class="container px-4 px-lg-5 justify-content-center">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">8739 Convent Street, London, UK</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="#!">queries@smilecare.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">+91 (453) 276-8823</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://github.com/Amanoddin"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+        <!--Footer-->
+        <footer class="footer bg-black small text-center text-white-50">
+            <div class="container px-4 px-lg-5">Copyright &copy; SmileCare<br>Made by Shaikh Amanoddin
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
